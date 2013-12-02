@@ -6,3 +6,7 @@ print "`--------------------------------------------------------'"
 # set up world/player objects
 
 # enter game loop
+
+while True:
+	input = raw_input("> ")
+	print input
