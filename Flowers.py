@@ -1,17 +1,21 @@
-def print_banner():
-	print ".----------------------------- FLOWERS -----------------------------."
-	print "|                   A(n) ORG_NAME_HERE Adventure                    |"
-	print "|          dot|not           ToxicVenom             jsrn            |"
-	print "`-------------------------------------------------------------------'"
+class Flowers(object):
 
-def handle_input(input):
-	print input
+	def __init__(self):
+		self.print_banner()
+		self.enter_game_loop()
 
-# set up world/player objects
+	def print_banner(self):
+		print ".----------------------------- FLOWERS -----------------------------."
+		print "|                   A(n) ORG_NAME_HERE Adventure                    |"
+		print "|          dot|not           ToxicVenom             jsrn            |"
+		print "`-------------------------------------------------------------------'"
 
-print_banner()
+	def handle_input(self, input):
+		print input
 
-# enter game loop
-while True:
-	input = raw_input("> ")
-	handle_input(input)
+	def enter_game_loop(self):
+		while True:
+			input = raw_input("> ")
+			self.handle_input(input)
+
+game = Flowers()
