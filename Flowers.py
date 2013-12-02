@@ -1,7 +1,10 @@
+from core import player
+
 class Flowers(object):
 
 	def __init__(self):
 		self.print_banner()
+		self.set_up_game()
 		self.enter_game_loop()
 
 	def print_banner(self):
@@ -17,5 +20,9 @@ class Flowers(object):
 		while True:
 			input = raw_input("> ")
 			self.handle_input(input)
+
+	def set_up_game(self):
+		self.player = player.Player()
+		self.player.pick_name()
 
 game = Flowers()
