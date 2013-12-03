@@ -22,6 +22,9 @@ class Flowers
           case input
           when "quit"
                exit_game
+          else
+               orc = Orc.new
+               orc.describe
           end
      end
 
