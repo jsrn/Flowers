@@ -32,6 +32,7 @@ class Flowers
      def set_up_game
           @player = Player.new
           @player.pick_name
+          @player.print_status
      end
 end
 
