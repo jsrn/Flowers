@@ -7,7 +7,7 @@ class Flowers(object):
 
 	# The __init__ method is called when an object of class Flowers is created
 	# Every method within the class has to take "self" as a parameter, but you
-	# need to include "self" when calling the method.
+	# don't need to include "self" when calling the method.
 	def __init__(self):
 		self.print_banner()
 		self.set_up_game()
