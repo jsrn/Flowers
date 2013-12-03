@@ -4,7 +4,7 @@ class Player < Mobile
 
 	def pick_name
 		puts "Greetings, traveller! What is your name?"
-		print "> "
+		print "Enter name: "
 		@name = gets.chomp
 		puts "Greetings, " + @name
 	end
