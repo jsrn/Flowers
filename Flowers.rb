@@ -3,6 +3,7 @@ $:.unshift(Dir.pwd)
 class Flowers
 
      require "mobiles/player.rb"
+     require "mobiles/humanoids.rb"
 
      def initialize
           print_banner
