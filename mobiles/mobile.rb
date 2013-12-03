@@ -1,5 +1,5 @@
 class Mobile
-	def get_name
-		return @name
-	end
+
+	attr_reader :name
+	
 end
