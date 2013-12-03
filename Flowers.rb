@@ -12,14 +12,17 @@ class Flowers
      end
 
      def print_banner
-          puts ".----------------------------- FLOWERS -----------------------------."
-          puts "|                   A(n) ORG_NAME_HERE Adventure                    |"
-          puts "|          dot|not           ToxicVenom             jsrn            |"
-          puts "`-------------------------------------------------------------------'"
+          puts ".----------------------------- FLOWERS -----------------------------.\n"\
+               "|                   A(n) ORG_NAME_HERE Adventure                    |\n"\
+               "|          dot|not           ToxicVenom             jsrn            |\n"\
+               "`-------------------------------------------------------------------'"
      end
 
      def handle_input(input)
-          puts input
+          case input
+          when "quit"
+               exit_game
+          end
      end
 
      def enter_game_loop
@@ -34,6 +37,15 @@ class Flowers
           @player = Player.new
           @player.pick_name
           @player.print_status
+     end
+
+     def exit_game
+          puts "Thank you for playing Flowers!\n"\
+               " - ORG_NAME_HERE\n"\
+               "   dot|not\n"\
+               "   ToxicVenom\n"\
+               "   jsrn"
+          exit
      end
 end
 
