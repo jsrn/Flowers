@@ -35,6 +35,4 @@ class Flowers
      end
 end
 
-# Create a new object from the class "Flowers" and store it in the variable
-# "game"
 game = Flowers.new
