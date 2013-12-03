@@ -12,5 +12,6 @@ class Player < Mobile
 	def print_status
 		puts "Name: #{@name}"
 		puts "HP: #{@current_hp}/#{max_hp}"
+		puts "STR: #{@str} DEX: #{@dex} INT: #{@int}"
 	end
 end
