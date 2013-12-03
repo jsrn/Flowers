@@ -1,8 +1,6 @@
-class Player
+require_relative "mobile.rb"
 
-	def get_name
-		return @name
-	end
+class Player < Mobile
 
 	def pick_name
 		puts "Greetings, traveller! What is your name?"
