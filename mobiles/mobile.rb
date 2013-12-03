@@ -27,4 +27,11 @@ class Mobile
 		@str / 2 + 50
 	end
 
+	def describe
+		puts "#{@name}\n"\
+			 "#{@description}\n"\
+			 "HP: #{@current_hp}/#{max_hp}\n"\
+			 "STR: #{@str} DEX: #{@dex} INT: #{@int}"
+	end
+
 end
