@@ -12,15 +12,12 @@ class Mobile
 
 	def initialize
 		@level ||= 1
-		set_stats(1, 1, 1)
+
+		@str ||= 1
+		@dex ||= 1
+		@int ||= 1
 
 		@current_hp = max_hp
-	end
-
-	def set_stats(str,dex,int)
-		@str = str
-		@dex = dex
-		@int = int
 	end
 
 	def max_hp
