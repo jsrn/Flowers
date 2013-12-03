@@ -10,7 +10,11 @@ class Mobile
 	attr_reader :name
 
 	def initialize
+		@level ||= 1
+		set_stats(1, 1, 1)
+
 		@current_hp = max_hp
+
 	end
 
 	def set_stats(str,dex,int)
@@ -20,7 +24,7 @@ class Mobile
 	end
 
 	def max_hp
-		77
+		@str / 2 + 50
 	end
 
 end
