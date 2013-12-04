@@ -18,16 +18,9 @@ class Flowers
                "`-------------------------------------------------------------------'"
      end
 
-     def handle_input(input)
-          case input
-          when "quit"
-               exit_game
-          when "status"
-               @player.print_status
-          else
-               orc = Orc.new
-               orc.describe
-          end
+     def set_up_game
+          @player = Player.new
+          @player.pick_name
      end
 
      def enter_game_loop
@@ -38,9 +31,16 @@ class Flowers
           end
      end
 
-     def set_up_game
-          @player = Player.new
-          @player.pick_name
+     def handle_input(input)
+          case input
+          when "quit"
+               exit_game
+          when "status"
+               @player.print_status
+          else
+               orc = Orc.new
+               orc.describe
+          end
      end
 
      def exit_game
