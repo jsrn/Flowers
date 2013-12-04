@@ -22,6 +22,8 @@ class Flowers
           case input
           when "quit"
                exit_game
+          when "status"
+               @player.print_status
           else
                orc = Orc.new
                orc.describe
@@ -39,7 +41,6 @@ class Flowers
      def set_up_game
           @player = Player.new
           @player.pick_name
-          @player.print_status
      end
 
      def exit_game
