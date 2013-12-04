@@ -2,8 +2,8 @@ $:.unshift(Dir.pwd)
 
 class Flowers
 
-     require "mobiles/player.rb"
-     require "mobiles/humanoids.rb"
+     Dir["core/*.rb"].each {|file| require file }
+     Dir["mobiles/*.rb"].each {|file| require file }
 
      def initialize
           print_banner
@@ -40,6 +40,7 @@ class Flowers
           else
                orc = Orc.new
                orc.describe
+               Arena.fight(@player,orc)
           end
      end
 
