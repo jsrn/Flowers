@@ -2,6 +2,13 @@ require_relative "mobile.rb"
 
 class Player < Mobile
 
+	def initialize
+		@name = "player"
+		@description = "The intrepid hero."
+		@str, @dex, @int = 1, 1, 1
+		super
+	end
+
 	def pick_name
 		puts "Greetings, traveller! What is your name?"
 		print "Enter name: "
@@ -10,8 +17,7 @@ class Player < Mobile
 	end
 
 	def print_status
-		puts "Name: #{@name}"
-		puts "HP: #{@current_hp}/#{max_hp}"
-		puts "STR: #{@str} DEX: #{@dex} INT: #{@int}"
+		describe
+		puts "| Inventory:"
 	end
 end
