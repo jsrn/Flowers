@@ -37,6 +37,8 @@ class Flowers
                exit_prompt
           when "status"
                @player.print_status
+          when "inventory"
+               Inventory.view(@player)
           else
                orc = Orc.new
                orc.describe
