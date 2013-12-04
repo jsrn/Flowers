@@ -8,3 +8,12 @@ class Orc < Mobile
 		super
 	end
 end
+
+class Drow < Mobile
+	def initialize
+		@name = "a drow"
+		@description = "A dark elf, fast, cunning and cruel."
+		@str, @dex, @int = 3, 5, 5
+		super
+	end
+end
