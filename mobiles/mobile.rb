@@ -25,10 +25,11 @@ class Mobile
 	end
 
 	def describe
-		puts "#{@name}\n"\
-			 "#{@description}\n"\
-			 "HP: #{@current_hp}/#{max_hp}\n"\
-			 "STR: #{@str} DEX: #{@dex} INT: #{@int}"
+		puts ".--------------------------------------------------------\n"\
+			 "| #{@name}\n"\
+			 "| #{@description}\n"\
+			 "| HP: #{@current_hp}/#{max_hp}\n"\
+			 "| STR: #{@str} DEX: #{@dex} INT: #{@int}"
 	end
 
 end
