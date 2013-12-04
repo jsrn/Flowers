@@ -2,7 +2,7 @@ class Mobile
 
 	attr_reader :level
 
-	attr_reader :current_hp
+	attr_reader :hp
 	attr_reader	:str
 	attr_reader :dex
 	attr_reader :int
@@ -17,7 +17,7 @@ class Mobile
 		@dex ||= 1
 		@int ||= 1
 
-		@current_hp = max_hp
+		@hp = max_hp
 	end
 
 	def max_hp
@@ -28,7 +28,7 @@ class Mobile
 		puts ".--------------------------------------------------------\n"\
 			 "| #{@name}\n"\
 			 "| #{@description}\n"\
-			 "| HP: #{@current_hp}/#{max_hp}\n"\
+			 "| HP: #{@hp}/#{max_hp}\n"\
 			 "| STR: #{@str} DEX: #{@dex} INT: #{@int}"
 	end
 
