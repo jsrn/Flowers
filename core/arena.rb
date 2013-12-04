@@ -18,8 +18,8 @@ class Arena
 			print " " * 30
 			puts "#{Arena.get_padded_hp(opponent)}\n"
 
-			puts "#{result}\n\n" if result != ""
-			puts "Options:"
+			puts "\n#{result}\n" if result != ""
+			puts "\nOptions:"
 			puts " - melee     - ranged     - magic     - run"
 
 			print "ACTION> "
