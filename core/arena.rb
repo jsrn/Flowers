@@ -2,6 +2,7 @@ class Arena
 
 	def Arena.fight(player,opponent)
 		while 1
+			puts "\e[H\e[2J"
 			puts ".--------------------------------------------------------.\n"\
 				 "|   player                                    enemy      |\n"\
 				 "|--------------------------------------------------------|\n"\
