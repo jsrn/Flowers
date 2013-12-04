@@ -34,13 +34,19 @@ class Flowers
      def handle_input(input)
           case input
           when "quit"
-               exit_game
+               exit_prompt
           when "status"
                @player.print_status
           else
                orc = Orc.new
                orc.describe
           end
+     end
+
+     def exit_prompt
+          puts "Are you sure you want to exit?"
+          print "[y/n]: "
+          exit_game if gets.chomp.downcase == "y"
      end
 
      def exit_game
