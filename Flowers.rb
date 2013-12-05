@@ -13,7 +13,7 @@ class Flowers
 
      def print_banner
           puts ".----------------------------- FLOWERS -----------------------------.\n"\
-               "|                   A(n) ORG_NAME_HERE Adventure                    |\n"\
+               "|                   A Stained Glass Games Adventure                 |\n"\
                "|          dot|not           ToxicVenom             jsrn            |\n"\
                "`-------------------------------------------------------------------'"
      end
@@ -54,7 +54,7 @@ class Flowers
 
      def exit_game
           puts "Thank you for playing Flowers!\n"\
-               " - ORG_NAME_HERE\n"\
+               " - Stained Glass Games\n"\
                "   dot|not\n"\
                "   ToxicVenom\n"\
                "   jsrn"
