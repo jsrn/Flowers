@@ -73,4 +73,8 @@ class World
 
 		exits.join("|")
 	end
+
+	def get_coords
+		return "You are now at #{@x},#{@y}"
+	end
 end

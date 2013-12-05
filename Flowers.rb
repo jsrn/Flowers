@@ -43,6 +43,8 @@ class Flowers
                Inventory.view(@player)
           when "look"
                @world.describe_current_room
+          when "compass"
+               puts @world.get_coords
           else
                parse_input(input)
           end
