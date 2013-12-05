@@ -5,6 +5,7 @@ class World
 		@x, @y = 0, 0
 		@rooms = {}
 		@current_room = Room.new
+		@current_room.exits = "nesw"
 		store_room( @current_room, @x, @y)
 	end
 
