@@ -20,9 +20,32 @@ class World
 
 	def try_movement(direction)
 		if @current_room.has_exit?(direction)
-			puts "Trying to go #{direction}"
+			go_direction(direction)
 		else
 			puts "You cannot go that way."
+		end
+	end
+
+	def go_direction(direction)
+		case direction
+		when "north"
+			@y += 1
+		when "east"
+			@x += 1
+		when "south"
+			@y -= 1
+		when "west"
+			@x -= 1
+		end
+
+		@rooms[@x] = {} if @rooms[@x].nil?
+
+		if @rooms[@x][@y].nil?
+			@current_room = Room.new
+			@current_room.exits = "south"
+			store_room( @current_room, @x, @y)
+		else
+			@current_room = @rooms[@x][@y]
 		end
 	end
 end
