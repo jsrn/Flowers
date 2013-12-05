@@ -4,6 +4,7 @@ class Flowers
 
      Dir["core/*.rb"].each {|file| require file }
      Dir["mobiles/*.rb"].each {|file| require file }
+     Dir["world/*.rb"].each {|file| require file }
 
      def initialize
           print_banner
@@ -21,6 +22,7 @@ class Flowers
      def set_up_game
           @player = Player.new
           @player.pick_name
+          @world = World.new
      end
 
      def enter_game_loop
@@ -39,6 +41,8 @@ class Flowers
                @player.print_status
           when "inventory"
                Inventory.view(@player)
+          when "look"
+               @world.describe_current_room
           else
                orc = Orc.new
                orc.describe
