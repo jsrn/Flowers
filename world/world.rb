@@ -42,10 +42,35 @@ class World
 
 		if @rooms[@x][@y].nil?
 			@current_room = Room.new
-			@current_room.exits = "south"
+			@current_room.exits = get_new_exits(@x, @y)
 			store_room( @current_room, @x, @y)
 		else
 			@current_room = @rooms[@x][@y]
 		end
+	end
+
+	def get_new_exits(x,y)
+		exits = []
+
+		@rooms[x-1] = {} if @rooms[x-1].nil?
+		@rooms[x+1] = {} if @rooms[x+1].nil?
+
+		if !@rooms[x-1][y].nil? && @rooms[x-1][y].has_exit?("east")
+			exits << "west"
+		end
+
+		if !@rooms[x+1][y].nil? && @rooms[x+1][y].has_exit?("west")
+			exits << "east"
+		end
+
+		if !@rooms[x][y+1].nil? && @rooms[x][y+1].has_exit?("south")
+			exits << "north"
+		end
+
+		if !@rooms[x][y-1].nil? && @rooms[x][y-1].has_exit?("north")
+			exits << "south"
+		end
+
+		exits.join("|")
 	end
 end
