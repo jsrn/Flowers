@@ -44,6 +44,14 @@ class Flowers
           when "look"
                @world.describe_current_room
           else
+               parse_input(input)
+          end
+     end
+
+     def parse_input(input)
+          if input.start_with?("go ")
+               @world.try_movement(input[3..-1])
+          else
                orc = Orc.new
                orc.describe
                Arena.fight(@player,orc)
