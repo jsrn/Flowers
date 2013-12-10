@@ -3,10 +3,10 @@ require_relative "mobile.rb"
 class Player < Mobile
 
 	def initialize
+		super
 		@name = "player"
 		@description = "The intrepid hero."
 		@str, @dex, @int = 1, 1, 1
-		super
 		@profile_picture = [
 			"   @@     ",
 			"  .@@. |D ",
@@ -17,6 +17,7 @@ class Player < Mobile
 			"  @  @    ",
 			" ==  ==   "
 		]
+		@hp = max_hp
 	end
 
 	def pick_name
