@@ -9,6 +9,7 @@ class Mobile
 
 	attr_reader :name
 	attr_reader :description
+	attr_reader :profile_picture
 
 	def initialize
 		@level ||= 1
@@ -16,6 +17,17 @@ class Mobile
 		@str ||= 1
 		@dex ||= 1
 		@int ||= 1
+
+		@profile_picture ||= [
+			"    @@    ",
+			"   @@@@   ",
+			"  @ @@ @  ",
+			" @  @@  @ ",
+			"   @@@@   ",
+			"  @@  @@  ",
+			"  @@  @@  ",
+			"  @@  @@  "
+		]
 
 		@hp = max_hp
 	end
