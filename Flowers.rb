@@ -68,11 +68,11 @@ class Flowers
      end
 
      def exit_game
-          puts "Thank you for playing Flowers!\n"\
-               " - Stained Glass Games\n"\
-               "   dot|not\n"\
-               "   ToxicVenom\n"\
-               "   jsrn"
+          puts ".----------------------------- FLOWERS -----------------------------.\n"\
+               "|                   A Stained Glass Games Adventure                 |\n"\
+               "|          dot|not           ToxicVenom             jsrn            |\n"\
+               "|                      Thank you for playing!                       |\n"\
+               "`-------------------------------------------------------------------'"
           exit
      end
 end
