@@ -7,6 +7,16 @@ class Player < Mobile
 		@description = "The intrepid hero."
 		@str, @dex, @int = 1, 1, 1
 		super
+		@profile_picture = [
+			"   @@     ",
+			"  .@@. |D ",
+			"  @@@@ |  ",
+			"  @@@ @   ",
+			"  .@@.    ",
+			"  @  @    ",
+			"  @  @    ",
+			" ==  ==   "
+		]
 	end
 
 	def pick_name
