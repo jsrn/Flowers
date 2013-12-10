@@ -1,6 +1,24 @@
 require_relative "mobile.rb"
 
-class Orc < Mobile
+class Humanoid < Mobile
+	attr_reader :profile_picture
+
+	def initialize
+		@profile_picture = [
+			"    @@    ",
+			"   @@@@   ",
+			"  @ @@ @  ",
+			" @  @@  @ ",
+			"   @@@@   ",
+			"  @@  @@  ",
+			"  @@  @@  ",
+			"  @@  @@  "
+		]
+		super
+	end
+end
+
+class Orc < Humanoid
 	def initialize
 		@name = "an orc"
 		@description = "A horrible orc!"
@@ -9,7 +27,7 @@ class Orc < Mobile
 	end
 end
 
-class Drow < Mobile
+class Drow < Humanoid
 	def initialize
 		@name = "a drow"
 		@description = "A dark elf, fast, cunning and cruel."

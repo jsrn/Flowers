@@ -4,14 +4,14 @@ class Arena
 		while 1
 			puts "\e[H\e[2J"
 
-			puts " @@@@@@@@@@                              @@@@@@@@@@"
-			puts " @@@@@@@@@@                              @@@@@@@@@@"
-			puts " @@@@@@@@@@                              @@@@@@@@@@"
-			puts " @@@@@@@@@@                              @@@@@@@@@@"
-			puts " @@@@@@@@@@                              @@@@@@@@@@"
-			puts " @@@@@@@@@@                              @@@@@@@@@@"
-			puts " @@@@@@@@@@                              @@@@@@@@@@"
-			puts " @@@@@@@@@@                              @@@@@@@@@@\n"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[0]}"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[1]}"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[2]}"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[3]}"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[4]}"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[5]}"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[6]}"
+			puts " @@@@@@@@@@                              #{opponent.profile_picture[7]}\n"
 			puts "           ------------------------------"
 			
 			print " #{Arena.get_padded_hp(player)}"
