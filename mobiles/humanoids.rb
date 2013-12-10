@@ -26,5 +26,6 @@ class Drow < Mobile
 		@name = "a drow"
 		@description = "A dark elf, fast, cunning and cruel."
 		@str, @dex, @int = 3, 5, 5
+		@hp = max_hp
 	end
 end

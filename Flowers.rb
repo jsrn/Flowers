@@ -54,10 +54,10 @@ class Flowers
      def parse_input(input)
           if input.start_with?("go ")
                @world.try_movement(input[3..-1])
+          elsif input.start_with?("fight ")
+               @world.try_combat(@player, input[6..-1])
           else
-               orc = Orc.new
-               orc.describe
-               Arena.fight(@player,orc)
+               puts ["Huh?", "What?", "That makes no sense."].sample
           end
      end
 

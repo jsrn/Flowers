@@ -80,4 +80,13 @@ class World
 	def get_coords
 		return "You are now at #{@x},#{@y}."
 	end
+
+	def try_combat(player, target)
+		@current_room.monsters.each do |monster|
+			if monster.name == target
+				Arena.fight(player, monster)
+				break
+			end
+		end
+	end
 end
