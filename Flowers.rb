@@ -23,6 +23,7 @@ class Flowers
           @player = Player.new
           @player.pick_name
           @world = World.new
+          @world.describe_current_room
      end
 
      def enter_game_loop

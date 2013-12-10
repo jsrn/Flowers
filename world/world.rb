@@ -21,6 +21,7 @@ class World
 	def try_movement(direction)
 		if @current_room.has_exit?(direction)
 			go_direction(direction)
+			describe_current_room
 		else
 			puts "You cannot go that way."
 		end
@@ -47,6 +48,8 @@ class World
 		else
 			@current_room = @rooms[@x][@y]
 		end
+
+		puts "You go #{direction}."
 	end
 
 	def get_new_exits(x,y)
@@ -75,6 +78,6 @@ class World
 	end
 
 	def get_coords
-		return "You are now at #{@x},#{@y}"
+		return "You are now at #{@x},#{@y}."
 	end
 end

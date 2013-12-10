@@ -7,9 +7,7 @@ class Room
 
 	def describe
 		puts @description
-
-		print "There are exits to the "
-		puts exit_long_form
+		puts "There are exits to the #{exit_long_form}."
 	end
 
 	def exit_long_form
