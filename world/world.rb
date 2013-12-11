@@ -58,23 +58,20 @@ class World
 		@rooms[x-1] = {} if @rooms[x-1].nil?
 		@rooms[x+1] = {} if @rooms[x+1].nil?
 
-		if !@rooms[x-1][y].nil? && @rooms[x-1][y].has_exit?("east")
-			exits << "west"
-		end
-
-		if !@rooms[x+1][y].nil? && @rooms[x+1][y].has_exit?("west")
-			exits << "east"
-		end
-
-		if !@rooms[x][y+1].nil? && @rooms[x][y+1].has_exit?("south")
-			exits << "north"
-		end
-
-		if !@rooms[x][y-1].nil? && @rooms[x][y-1].has_exit?("north")
-			exits << "south"
-		end
+		exits << "west" if get_exit_to_room(x-1, y, "east")
+		exits << "east" if get_exit_to_room(x+1, y, "west")
+		exits << "north" if get_exit_to_room(x, y+1, "south")
+		exits << "south" if get_exit_to_room(x, y-1, "north")
 
 		exits.join("|")
+	end
+
+	def get_exit_to_room(x, y, return_direction)
+		if !@rooms[x][y].nil? && @rooms[x][y].has_exit?(return_direction)
+			return true
+		elsif @rooms[x][y].nil?
+			return rand(0..1) == 0
+		end
 	end
 
 	def get_coords
