@@ -4,25 +4,28 @@ class Room
 
 	def initialize
 		@description = get_random_blurb
-		@monsters = generate_monsters
+		@monsters = []
+		generate_monsters
 	end
 
 	def describe
 		puts @description
 		puts "There are exits to the #{exit_long_form}."
-		puts "Lurking in the area you see #{monsters_long_form}."
+		get_monsters_description
 	end
 
 	def generate_monsters
-		monsters = []
-		monsters << Orc.new
-		monsters << Orc.new
-		monsters << Drow.new
+		@monsters << Orc.new if rand(0..1) == 1
+		@monsters << Orc.new if rand(0..1) == 1
+		@monsters << Drow.new if rand(0..1) == 1
 	end
 
-	def monsters_long_form
-		names = @monsters.collect { |x| x.name }
-		names.join(", ")
+	def get_monsters_description
+		if @monsters.length > 0
+			names = @monsters.collect { |x| x.name }
+			names_str = names.join(", ")
+			puts "Lurking in the area you see #{names_str}."
+		end
 	end
 
 	def exit_long_form
