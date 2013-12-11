@@ -4,7 +4,7 @@ class Player < Mobile
 
 	def initialize
 		super
-		@name = "player"
+		@name = "Douglas"
 		@description = "The intrepid hero."
 		@str, @dex, @int = 1, 1, 1
 		@profile_picture = [
@@ -18,13 +18,6 @@ class Player < Mobile
 			" ==  ==   "
 		]
 		@hp = max_hp
-	end
-
-	def pick_name
-		puts "Greetings, traveller! What is your name?"
-		print "Enter name: "
-		@name = gets.chomp
-		puts "Greetings, " + @name
 	end
 
 	def print_status
