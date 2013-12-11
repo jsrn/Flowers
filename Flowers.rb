@@ -43,7 +43,7 @@ class Flowers
           while 1 do
                puts "-" * 80
                print "> "
-               input = gets.chomp
+               input = gets.chomp.downcase
                handle_input(input)
           end
      end
