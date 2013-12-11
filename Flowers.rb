@@ -13,10 +13,10 @@ class Flowers
      end
 
      def print_banner
-          puts ".----------------------------- FLOWERS -----------------------------.\n"\
-               "|                   A Stained Glass Games Adventure                 |\n"\
-               "|          dot|not           ToxicVenom             jsrn            |\n"\
-               "`-------------------------------------------------------------------'"
+          puts ".----------------------------------- FLOWERS ----------------------------------.\n"\
+               "|                         A Stained Glass Games Adventure                      |\n"\
+               "|                dot|not           ToxicVenom             jsrn                 |\n"\
+               "`------------------------------------------------------------------------------'"
      end
 
      def print_help_text
@@ -86,11 +86,11 @@ class Flowers
      end
 
      def exit_game
-          puts ".----------------------------- FLOWERS -----------------------------.\n"\
-               "|                   A Stained Glass Games Adventure                 |\n"\
-               "|          dot|not           ToxicVenom             jsrn            |\n"\
-               "|                      Thank you for playing!                       |\n"\
-               "`-------------------------------------------------------------------'"
+          puts ".----------------------------------- FLOWERS ----------------------------------.\n"\
+               "|                         A Stained Glass Games Adventure                      |\n"\
+               "|                dot|not           ToxicVenom             jsrn                 |\n"\
+               "|                            Thank you for playing!                            |\n"\
+               "`------------------------------------------------------------------------------'"
           exit
      end
 end
