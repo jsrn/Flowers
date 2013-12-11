@@ -19,6 +19,19 @@ class Flowers
                "`-------------------------------------------------------------------'"
      end
 
+     def print_help_text
+          puts "-" * 80
+          puts " Available commands:"
+          puts "  inventory"
+          puts "  quit"
+          puts "  status"
+          puts "  look"
+          puts "  compass"
+          puts "  ? / help"
+          puts "  fight <enemy name>"
+          puts "  go <direction>"
+     end
+
      def set_up_game
           @player = Player.new
           @player.pick_name
@@ -28,6 +41,7 @@ class Flowers
 
      def enter_game_loop
           while 1 do
+               puts "-" * 80
                print "> "
                input = gets.chomp
                handle_input(input)
@@ -46,6 +60,10 @@ class Flowers
                @world.describe_current_room
           when "compass"
                puts @world.get_coords
+          when "?"
+               print_help_text
+          when "help"
+               print_help_text
           else
                parse_input(input)
           end
