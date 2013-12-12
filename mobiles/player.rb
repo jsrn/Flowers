@@ -33,14 +33,34 @@ class Player < Mobile
   end
 
   def check_level_up
-    if @xp >=  110 + ( @level * 10 )
-      level_up
+     if @level < 50 && @xp >=  110 + ( @level * 10 )
+       level_up
+     end
+  end
+
+
+    def level_up
+    @xp -= 110 + ( @level * 10 )
+    @level += 1
+    chosen = false
+    until chosen
+      puts "Pick a stat to increase: strength / dexterity / intelligence"
+      print "> "
+      case gets.chomp.downcase
+      when "strength"
+        @str += 1
+        chosen = true
+      when "dexterity"
+        @dex += 1
+        chosen = true
+      when "intelligence"
+        @int += 1
+        chosen = true
+      end
     end
   end
 
 
-  def level_up
-     @xp -= 110 + ( @level * 10 )
-     @level += 1
-  end
-end  
+
+
+  
