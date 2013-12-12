@@ -41,5 +41,6 @@ class Player < Mobile
 
   def level_up
      @xp -= 110 + ( @level * 10 )
+     @level += 1
   end
 end  
