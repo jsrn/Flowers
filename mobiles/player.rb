@@ -34,11 +34,11 @@ class Player < Mobile
 
   def check_level_up
     if @xp >=  110 + ( @level * 10 )
-     level_up
+      level_up
+    end
   end
-end  
+
 
   def level_up
-    
-  end
+  end   
 end
