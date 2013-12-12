@@ -18,10 +18,23 @@ class Player < Mobile
 			" ==  ==   "
 		]
 		@hp = max_hp
+		@xp = 0
 	end
 
 	def print_status
 		describe
 		puts "| Inventory:"
+	end
+    def grant_xp(xp)
+        @xp += xp
+    end
+
+    def can_level_up?
+    end
+    def level_up
+
+        
+
+
 	end
 end
