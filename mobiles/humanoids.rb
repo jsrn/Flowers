@@ -20,6 +20,16 @@ class Orc < Mobile
 	end
 end
 
+class Spider < Mobile
+	def initialize
+		super
+		@name = "a spider"
+		@description = "A spider hunting for flesh."
+		@str, @dex, @int = 3, 5, 3
+		@hp = max_hp
+	end
+end
+
 class Drow < Mobile
 	def initialize
 		super
