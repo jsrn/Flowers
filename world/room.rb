@@ -39,10 +39,19 @@ class Room
 		case @biome
 		when "grass"
 			return get_random_grass_blurb
+		when "forest"
+			return get_random_forest_blurb
 		end
 	end
 
 	def get_random_grass_blurb
+		[
+			"You are in a grassy field.\n",
+			"You are walking through some long grass and bushes.\n"
+		].sample
+	end
+
+	def get_random_forest_blurb
 		[
 			"You are in a grassy field.\n",
 			"You are walking through some long grass and bushes.\n"
