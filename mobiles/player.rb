@@ -28,11 +28,16 @@ class Player < Mobile
 
   def grant_xp(xp)
     @xp += xp
+    puts "You earned #{xp} xp!"
+    check_level_up
   end
 
-  def can_level_up?
+  def check_level_up
+    if @xp >=  110 + ( @level * 10 )
+     level_up
   end
 
   def level_up
+    
   end
 end
