@@ -36,6 +36,7 @@ class Player < Mobile
     if @xp >=  110 + ( @level * 10 )
      level_up
   end
+end  
 
   def level_up
     
