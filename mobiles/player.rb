@@ -38,8 +38,7 @@ class Player < Mobile
      end
   end
 
-
-    def level_up
+  def level_up
     @xp -= 110 + ( @level * 10 )
     @level += 1
     chosen = false
@@ -59,8 +58,5 @@ class Player < Mobile
       end
     end
   end
-
-
-
-
+end
   
