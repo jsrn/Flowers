@@ -5,6 +5,7 @@ class Room
 	def initialize
 		@description = get_random_blurb
 		@monsters = []
+		@biome = "grass"
 		generate_monsters
 	end
 
@@ -35,10 +36,26 @@ class Room
 	end
 
 	def get_random_blurb
+		case @biome
+		when "grass"
+			get_random_grass_blurb
+		end
+	end
+
+	def get_random_grass_blurb
 		[
-			"You look around and find yourself in a room.\n",
-			"There are trees and stuff.\n"
+			"You find yourself in a grassy field.\n",
+			"You are walking through some long grass and bushes.\n"
 		].sample
+	end
+
+	def get_map_tile
+		case @biome
+		when "grass"
+			return "."
+		when "forest"
+			return "^"
+		end
 	end
 
 	def has_exit?(direction)

@@ -36,6 +36,7 @@ class Flowers
           puts "  status"
           puts "  look"
           puts "  compass"
+          puts "  map"
           puts "  ? / help"
           puts "  fight <enemy name>"
           puts "  go <direction>"
@@ -69,6 +70,8 @@ class Flowers
                @world.describe_current_room
           when "compass"
                puts @world.get_coords
+          when "map"
+               @world.display_map
           when "?"
                print_help_text
           when "help"

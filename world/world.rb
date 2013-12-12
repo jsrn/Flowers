@@ -86,4 +86,24 @@ class World
 			end
 		end
 	end
+
+	def display_map
+		puts "\e[H\e[2J"
+		bottom_left_x = @x - 40
+		top_left_y = @y + 11
+
+		(0..21).each do |y_off|
+			(0..79).each do |x_off|
+				x = bottom_left_x + x_off
+				y = top_left_y - y_off
+
+				if !@rooms[x].nil? && !@rooms[x][y].nil?
+					print @rooms[x][y].get_map_tile
+				else
+					print " "
+				end
+			end
+			puts ""
+		end
+	end
 end
