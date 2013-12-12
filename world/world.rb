@@ -97,7 +97,9 @@ class World
 				x = bottom_left_x + x_off
 				y = top_left_y - y_off
 
-				if !@rooms[x].nil? && !@rooms[x][y].nil?
+				if x == @x and y == @y
+					print "x"
+				elsif !@rooms[x].nil? && !@rooms[x][y].nil?
 					print @rooms[x][y].get_map_tile
 				else
 					print " "
