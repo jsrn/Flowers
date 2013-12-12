@@ -3,9 +3,9 @@ class Room
 	attr_accessor :monsters
 
 	def initialize
+		@biome = "grass"
 		@description = get_random_blurb
 		@monsters = []
-		@biome = "grass"
 		generate_monsters
 	end
 
@@ -38,13 +38,13 @@ class Room
 	def get_random_blurb
 		case @biome
 		when "grass"
-			get_random_grass_blurb
+			return get_random_grass_blurb
 		end
 	end
 
 	def get_random_grass_blurb
 		[
-			"You find yourself in a grassy field.\n",
+			"You are in a grassy field.\n",
 			"You are walking through some long grass and bushes.\n"
 		].sample
 	end
