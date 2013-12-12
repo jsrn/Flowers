@@ -7,6 +7,8 @@
 * A system for epic battles - in an arena (again, rudimentary)!
 * An automatically generated world - full of beauty!
 
+![example](https://dl.dropboxusercontent.com/u/11252267/Images/flowers-example.png "Gameplay Example")
+
 ### Requirements
 The current requirements are pretty simple, all you need in order to play the game is an installation of Ruby with a version number greater than 1.9. Anything below that might work, but is not supported.
 
