@@ -81,7 +81,7 @@ class World
 	def try_combat(player, target)
 		@current_room.monsters.each do |monster|
 			if monster.name == target
-				Arena.fight(player, monster)
+				Arena.new(player, monster)
 				break
 			end
 		end
