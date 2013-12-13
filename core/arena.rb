@@ -1,22 +1,28 @@
 class Arena
-	def Arena.fight(player,opponent)
+  def initialize(player, opponent)
+    @player = player
+    @opponent = opponent
+    start_fight
+  end
+  
+	def start_fight
 		result = ""
 		while 1
 			puts "\e[H\e[2J"
 
-			puts " #{player.profile_picture[0]}#{" " * 30}#{opponent.profile_picture[0]}"
-			puts " #{player.profile_picture[1]}#{" " * 30}#{opponent.profile_picture[1]}"
-			puts " #{player.profile_picture[2]}#{" " * 30}#{opponent.profile_picture[2]}"
-			puts " #{player.profile_picture[3]}#{" " * 30}#{opponent.profile_picture[3]}"
-			puts " #{player.profile_picture[4]}#{" " * 30}#{opponent.profile_picture[4]}"
-			puts " #{player.profile_picture[5]}#{" " * 30}#{opponent.profile_picture[5]}"
-			puts " #{player.profile_picture[6]}#{" " * 30}#{opponent.profile_picture[6]}"
-			puts " #{player.profile_picture[7]}#{" " * 30}#{opponent.profile_picture[7]}\n"
+			puts " #{@player.profile_picture[0]}#{" " * 30}#{@opponent.profile_picture[0]}"
+			puts " #{@player.profile_picture[1]}#{" " * 30}#{@opponent.profile_picture[1]}"
+			puts " #{@player.profile_picture[2]}#{" " * 30}#{@opponent.profile_picture[2]}"
+			puts " #{@player.profile_picture[3]}#{" " * 30}#{@opponent.profile_picture[3]}"
+			puts " #{@player.profile_picture[4]}#{" " * 30}#{@opponent.profile_picture[4]}"
+			puts " #{@player.profile_picture[5]}#{" " * 30}#{@opponent.profile_picture[5]}"
+			puts " #{@player.profile_picture[6]}#{" " * 30}#{@opponent.profile_picture[6]}"
+			puts " #{@player.profile_picture[7]}#{" " * 30}#{@opponent.profile_picture[7]}\n"
 			puts "           ------------------------------"
 			
-			print " #{Arena.get_padded_hp(player)}"
+			print " #{get_padded_hp(@player)}"
 			print " " * 30
-			puts "#{Arena.get_padded_hp(opponent)}\n"
+			puts "#{get_padded_hp(@opponent)}\n"
 
 			puts "\n#{result}\n" if result != ""
 			puts "\nOptions:"
@@ -26,20 +32,15 @@ class Arena
 
 			action = gets.chomp.downcase
 
-			result = Arena.choose(action)
+			result = choose(action)
 
 			puts result
 
-			break if Arena.win_condition?(result)
+			break if win_condition?(result)
 		end
 	end
-
-	def Arena.win_condition?(result)
-		return true if result == "You win!"
-		return true if result == "You escape!"
-	end
-
-	def Arena.choose(action)
+	
+	def choose(action)
 		case action
 		when "melee"
 			return "You swing!"
@@ -51,8 +52,13 @@ class Arena
 			return "You escape!"
 		end
 	end
+	
+  def win_condition?(result)
+		return true if result == "You win!"
+		return true if result == "You escape!"
+	end
 
-	def Arena.get_padded_hp(mobile)
+	def get_padded_hp(mobile)
 		return "#{mobile.hp}/#{mobile.max_hp}".ljust(10)
 	end
 end
