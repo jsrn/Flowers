@@ -2,12 +2,12 @@ class Arena
   def initialize(player, opponent)
     @player = player
     @opponent = opponent
+    @battle_over = false
     start_fight
   end
   
   def start_fight
-    result = ""
-    while 1
+    until @battle_over
       puts "\e[H\e[2J"
 
       puts " #{@player.profile_picture[0]}#{" " * 30}#{@opponent.profile_picture[0]}"
@@ -30,44 +30,43 @@ class Arena
 
       print "ACTION> "
 
-      action = gets.chomp.downcase
-
-      result = choose(action)
-
-      puts result
-
-      break if win_condition?(result)
+      choose gets.chomp.downcase
     end
   end
 	
   def choose(action)
     case action
     when "melee"
-      return melee_attack
+      melee_attack
     when "ranged"
       return "You shoot!"
     when "magic"
       return "You flame!"
     when "run"
-      return "You escape!"
+      flee
     end
   end
 
   def melee_attack
-    return attack(@player.str,0)
+    return attack( @player.str, 0 )
   end
 
   def attack(base_stat, item_bonus)
     damage = base_stat + rand(-2..2)
     damage = 0 if damage < 0
-    return "You miss!" if damage == 0
+
     @opponent.hurt(damage)
-    return "You hit the enemy for #{damage} points of damage."
+
+    if damage == 0
+      puts "You miss!"
+    else
+      puts "You hit the enemy for #{damage} points of damage."
+    end
   end
 
-  def win_condition?(result)
-    return true if result == "You win!"
-    return true if result == "You escape!"
+  def flee
+    puts "You escape!"
+    @battle_over = true
   end
 
   def get_padded_hp(mobile)
