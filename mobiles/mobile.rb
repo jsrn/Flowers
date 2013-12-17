@@ -44,4 +44,11 @@ class Mobile
 			 "| STR: #{@str} DEX: #{@dex} INT: #{@int}"
 	end
 
+	def hurt(amount)
+		@hp -= amount
+		die if @hp <= 0
+	end
+
+	def die
+	end
 end
