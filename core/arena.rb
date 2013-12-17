@@ -43,7 +43,7 @@ class Arena
   def choose(action)
     case action
     when "melee"
-      return "You swing!"
+      return melee_attack
     when "ranged"
       return "You shoot!"
     when "magic"
@@ -52,7 +52,19 @@ class Arena
       return "You escape!"
     end
   end
-	
+
+  def melee_attack
+    return attack(@player.str,0)
+  end
+
+  def attack(base_stat, item_bonus)
+    damage = base_stat + rand(-2..2)
+    damage = 0 if damage < 0
+    return "You miss!" if damage == 0
+    @opponent.hurt(damage)
+    return "You hit the enemy for #{damage} points of damage."
+  end
+
   def win_condition?(result)
     return true if result == "You win!"
     return true if result == "You escape!"
