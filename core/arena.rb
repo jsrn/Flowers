@@ -3,6 +3,7 @@ class Arena
     @player = player
     @opponent = opponent
     @battle_over = false
+    @last_message = ""
     start_fight
   end
   
@@ -24,7 +25,7 @@ class Arena
       print " " * 30
       puts "#{get_padded_hp(@opponent)}\n"
 
-      puts "\n#{result}\n" if result != ""
+      puts "\n#{@last_message}\n" if @last_message != ""
       puts "\nOptions:"
       puts " - melee     - ranged     - magic     - run"
 
@@ -33,22 +34,22 @@ class Arena
       choose gets.chomp.downcase
     end
   end
-	
+
   def choose(action)
     case action
     when "melee"
       melee_attack
     when "ranged"
-      return "You shoot!"
+      @last_message = "You shoot!"
     when "magic"
-      return "You flame!"
+      @last_message = "You flame!"
     when "run"
       flee
     end
   end
 
   def melee_attack
-    return attack( @player.str, 0 )
+    attack( @player.str, 0 )
   end
 
   def attack(base_stat, item_bonus)
@@ -57,15 +58,24 @@ class Arena
 
     @opponent.hurt(damage)
 
+    if @opponent.hp <= 0
+      win
+    end
+
     if damage == 0
-      puts "You miss!"
+      @last_message = "You miss!"
     else
-      puts "You hit the enemy for #{damage} points of damage."
+      @last_message = "You hit the enemy for #{damage} points of damage."
     end
   end
 
   def flee
-    puts "You escape!"
+    @last_message = "You escape!"
+    @battle_over = true
+  end
+
+  def win
+    @last_message = "You win!"
     @battle_over = true
   end
 
