@@ -16,11 +16,8 @@ class Flowers
           puts ".----------------------------------- FLOWERS ----------------------------------.\n"\
                "|                         A Stained Glass Games Adventure                      |\n"\
                "|                dot|not           ToxicVenom             jsrn                 |\n"\
-               "|                                                                              |"
-     end
-
-     def print_starting_blurb
-          puts "|                   I don't know when I will get to go home.                   |\n"\
+               "|                                                                              |\n"\
+               "|                   I don't know when I will get to go home.                   |\n"\
                "|                For so long, I have had to travel these lands.                |\n"\
                "|               There are so many wrongs that must be put right.               |\n"\
                "|            So I raise my sword, and step further away from peace.            |\n"\
@@ -45,7 +42,6 @@ class Flowers
      def set_up_game
           @player = Player.new
           @world = World.new
-          print_starting_blurb
           @world.describe_current_room
      end
 
