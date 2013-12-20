@@ -10,7 +10,30 @@ class Biome
     ]
   }
 
+  @@tiles = {
+    :grass => ".",
+    :forest => "^"
+  }
+
+  @@monsters = {
+    :grass => [
+      Orc,
+      Drow
+    ],
+    :forest => [
+      Spider
+    ]
+  }
+
   def Biome.blurb(biome_type)
     @@blurbs[biome_type.to_sym].sample
+  end
+
+  def Biome.tile(biome_type)
+    @@tiles[biome_type.to_sym]
+  end
+
+  def Biome.monster(biome_type)
+    @@monsters[biome_type.to_sym].sample
   end
 end

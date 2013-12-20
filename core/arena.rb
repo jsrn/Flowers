@@ -94,7 +94,8 @@ class Arena
   end
 
   def flee
-    @last_message = "You escape!"
+    puts @last_response
+    puts "You escape!"
     @battle_over = true
   end
 

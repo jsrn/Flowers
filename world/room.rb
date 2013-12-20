@@ -1,8 +1,7 @@
-require_relative "biome.rb"
-
 class Room
 	attr_accessor :exits
 	attr_accessor :monsters
+	attr_reader :biome
 
 	def initialize
 		@biome = "grass"
@@ -19,9 +18,9 @@ class Room
 	end
 
 	def generate_monsters
-		@monsters << Orc.new if rand(0..1) == 1
-		@monsters << Orc.new if rand(0..1) == 1
-		@monsters << Drow.new if rand(0..1) == 1
+		rand(0..2).times do
+			@monsters << Biome.monster(@biome).new
+		end
 	end
 
 	def remove_monster(monster)
@@ -43,12 +42,7 @@ class Room
 	end
 
 	def get_map_tile
-		case @biome
-		when "grass"
-			return "."
-		when "forest"
-			return "^"
-		end
+		Biome.time(@biome)
 	end
 
 	def has_exit?(direction)

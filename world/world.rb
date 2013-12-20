@@ -1,4 +1,5 @@
 require_relative "room.rb"
+require_relative "biome.rb"
 
 class World
 	def initialize
@@ -101,7 +102,7 @@ class World
 				if x == @x and y == @y
 					print "x"
 				elsif !@rooms[x].nil? && !@rooms[x][y].nil?
-					print @rooms[x][y].get_map_tile
+					print Biome.tile(@rooms[x][y].biome)
 				else
 					print " "
 				end
