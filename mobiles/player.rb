@@ -23,6 +23,7 @@ class Player < Mobile
 
   def print_status
     describe
+    puts "| XP: " << @xp.to_s << "/" << xp_for_leveling_up.to_s
     puts "| Inventory:"
   end
 
@@ -33,13 +34,13 @@ class Player < Mobile
   end
 
   def check_level_up
-    if @level < 50 && @xp >=  110 + ( @level * 10 )
+    if @level < 50 && @xp >= xp_for_leveling_up
       level_up
     end
   end
 
   def level_up
-    @xp -= 110 + ( @level * 10 )
+    @xp -= xp_for_leveling_up
     @level += 1
     chosen = false
     until chosen
@@ -57,6 +58,10 @@ class Player < Mobile
         chosen = true
       end
     end
+  end
+
+  def xp_for_leveling_up
+    110 + ( @level * 10 )
   end
 
   def die
