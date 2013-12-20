@@ -4,6 +4,7 @@ class Room
 
 	def initialize
 		@biome = "grass"
+		@biome = "forest" if rand(0..1) == 1
 		@description = get_random_blurb
 		@monsters = []
 		generate_monsters
@@ -57,8 +58,8 @@ class Room
 
 	def get_random_forest_blurb
 		[
-			"You are in a grassy field.\n",
-			"You are walking through some long grass and bushes.\n"
+			"There are closely spaced trees here.\n",
+			"You are in a vibrant green forest.\n"
 		].sample
 	end
 
