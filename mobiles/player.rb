@@ -58,5 +58,10 @@ class Player < Mobile
       end
     end
   end
+
+  def die
+    puts "u ded son lol"
+    exit
+  end
 end
   
