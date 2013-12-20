@@ -1,3 +1,5 @@
+require_relative "biome.rb"
+
 class Room
 	attr_accessor :exits
 	attr_accessor :monsters
@@ -5,7 +7,7 @@ class Room
 	def initialize
 		@biome = "grass"
 		@biome = "forest" if rand(0..1) == 1
-		@description = get_random_blurb
+		@description = Biome.blurb(@biome)
 		@monsters = []
 		generate_monsters
 	end
@@ -38,29 +40,6 @@ class Room
 		exits = @exits.split("|")
 		exits[-1] = "and " << exits[-1] if exits.length > 1
 		exits.join(", ")
-	end
-
-	def get_random_blurb
-		case @biome
-		when "grass"
-			return get_random_grass_blurb
-		when "forest"
-			return get_random_forest_blurb
-		end
-	end
-
-	def get_random_grass_blurb
-		[
-			"You are in a grassy field.\n",
-			"You are walking through some long grass and bushes.\n"
-		].sample
-	end
-
-	def get_random_forest_blurb
-		[
-			"There are closely spaced trees here.\n",
-			"You are in a vibrant green forest.\n"
-		].sample
 	end
 
 	def get_map_tile
