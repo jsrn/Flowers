@@ -1,4 +1,6 @@
 class Arena
+  @@won_fight = false
+
   def initialize(player, opponent)
     @player = player
     @opponent = opponent
@@ -8,6 +10,8 @@ class Arena
   end
   
   def start_fight
+    @@won_fight = false
+
     until @battle_over
       puts "\e[H\e[2J"
 
@@ -53,7 +57,7 @@ class Arena
   end
 
   def attack(base_stat, item_bonus)
-    damage = base_stat + rand(-2..2)
+    damage = base_stat + rand(3..7)
     damage = 0 if damage < 0
 
     @opponent.hurt(damage)
@@ -75,8 +79,15 @@ class Arena
   end
 
   def win
-    @last_message = "You win!"
     @battle_over = true
+    @@won_fight = true
+    puts "You win!"
+    puts "You earn however much xp!"
+    puts "You find whatever items!"
+  end
+
+  def Arena.won_fight?
+    @@won_fight
   end
 
   def get_padded_hp(mobile)

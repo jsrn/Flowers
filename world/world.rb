@@ -82,6 +82,7 @@ class World
 		@current_room.monsters.each do |monster|
 			if monster.name == target
 				Arena.new(player, monster)
+				@current_room.remove_monster(monster) if Arena.won_fight?
 				break
 			end
 		end

@@ -21,6 +21,10 @@ class Room
 		@monsters << Drow.new if rand(0..1) == 1
 	end
 
+	def remove_monster(monster)
+		@monsters.delete_at(@monsters.index(monster))
+	end
+
 	def get_monsters_description
 		if @monsters.length > 0
 			names = @monsters.collect { |x| x.name }
