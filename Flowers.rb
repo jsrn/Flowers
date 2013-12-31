@@ -61,7 +61,7 @@ class Flowers
           when "status"
                @player.print_status
           when "inventory"
-               Inventory.view(@player)
+               Inventory.view
           when "look"
                @world.describe_current_room
           when "compass"

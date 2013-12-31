@@ -2,9 +2,9 @@ class Inventory
 	@@items = {}
 	@@item_count = 0
 
-	def Inventory.view(owner)
+	def Inventory.view
 		puts "Inventory:"
-		puts "Capacity: " << @@items.length.to_s << "/" << (owner.str + 9).to_s
+		puts "Capacity: " << @@items.length.to_s << "/15"
 	end
 
 	def Inventory.add_item(item)
