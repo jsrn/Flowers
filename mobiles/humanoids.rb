@@ -5,7 +5,7 @@ class Orc < Mobile
 		super
 		@name = "an orc"
 		@description = "A horrible orc!"
-		@str, @dex, @int = 10, 5, 1
+		@str, @dex, @int = 3, 1, 1
 		@profile_picture = [
 			"  ______  ",
 			" /      \\ ",
