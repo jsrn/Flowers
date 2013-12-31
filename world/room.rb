@@ -41,10 +41,6 @@ class Room
 		exits.join(", ")
 	end
 
-	def get_map_tile
-		Biome.time(@biome)
-	end
-
 	def has_exit?(direction)
 		@exits.split("|").include?(direction)
 	end
