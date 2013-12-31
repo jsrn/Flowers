@@ -77,7 +77,7 @@ class Arena
   end
 
   def enemy_attack(base_stat)
-    damage = base_stat + rand(3..7)
+    damage = base_stat + rand(1..5)
     damage = 0 if damage < 0
 
     @player.hurt(damage)
@@ -113,10 +113,14 @@ class Arena
   end
 
   def win
+    puts "You win!"
+
     @battle_over = true
     @@won_fight = true
-    puts "You win!"
-    puts "You earn however much xp!"
+
+    xp = 10 + @opponent.level
+    @player.grant_xp( xp )
+
     puts "You find whatever items!"
   end
 
