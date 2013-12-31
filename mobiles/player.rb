@@ -24,7 +24,6 @@ class Player < Mobile
   def print_status
     describe
     puts "| XP: " << @xp.to_s << "/" << xp_for_leveling_up.to_s
-    puts "| Inventory:"
   end
 
   def grant_xp(xp)
