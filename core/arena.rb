@@ -16,14 +16,11 @@ class Arena
     until @battle_over
       puts "\e[H\e[2J"
 
-      puts " #{@player.profile_picture[0]}#{" " * 30}#{@opponent.profile_picture[0]}"
-      puts " #{@player.profile_picture[1]}#{" " * 30}#{@opponent.profile_picture[1]}"
-      puts " #{@player.profile_picture[2]}#{" " * 30}#{@opponent.profile_picture[2]}"
-      puts " #{@player.profile_picture[3]}#{" " * 30}#{@opponent.profile_picture[3]}"
-      puts " #{@player.profile_picture[4]}#{" " * 30}#{@opponent.profile_picture[4]}"
-      puts " #{@player.profile_picture[5]}#{" " * 30}#{@opponent.profile_picture[5]}"
-      puts " #{@player.profile_picture[6]}#{" " * 30}#{@opponent.profile_picture[6]}"
-      puts " #{@player.profile_picture[7]}#{" " * 30}#{@opponent.profile_picture[7]}\n"
+      (0..7).each do |i|
+        print " " << @player.profile_picture[i]
+        print " " * 30
+        puts @opponent.profile_picture[i]
+      end
       puts "           ------------------------------"
 			
       print " #{get_padded_hp(@player)}"
