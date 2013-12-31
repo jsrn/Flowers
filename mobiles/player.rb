@@ -65,7 +65,8 @@ class Player < Mobile
   end
 
   def die
-    puts "u ded son lol"
+    puts "You have died."
+    puts "At the time of your death, you were level #{@level} and had #{@xp} experience."
     exit
   end
 end
