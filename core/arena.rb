@@ -118,7 +118,7 @@ class Arena
     @battle_over = true
     @@won_fight = true
 
-    xp = 10 + @opponent.level
+    xp = 30 + @opponent.level
     @player.grant_xp( xp )
 
     puts "You find whatever items!"
