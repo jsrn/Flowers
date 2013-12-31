@@ -8,7 +8,7 @@ class Orc < Mobile
 		@str, @dex, @int = 3, 1, 1
 		@profile_picture = [
 			"  ______  ",
-			" /      \\ ",
+			' /      \ ',
 			"| @    @ |",
 			"|        |",
 			"|   ^^   |",
