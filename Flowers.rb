@@ -42,6 +42,7 @@ class Flowers
      def set_up_game
           @player = Player.new
           @world = World.new
+          Inventory.add_item "potion"
           @world.describe_current_room
      end
 

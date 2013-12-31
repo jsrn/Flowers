@@ -1,9 +1,12 @@
 class Inventory
-	@@items = {}
+	@@items = []
 	@@item_count = 0
 
 	def Inventory.view
 		puts "Inventory:"
+    @@items.each do |item|
+      puts item
+    end 
 		puts "Capacity: " << @@items.length.to_s << "/15"
 	end
 
